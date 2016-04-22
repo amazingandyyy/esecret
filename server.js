@@ -46,13 +46,13 @@ app.get('/board', (req, res, next) => {
         });
     });
 });
-app.post('/pp', (req, res, next) => {
-    // console.log('req.body: ',req.body);
-    console.log('req.query: ',req.query);
+app.post('/post', (req, res, next) => {
+    console.log('req.body: ',req.body);
+    // console.log('req.query: ',req.query);
     // console.log('req: ',req);
     // console.log('req: ',req);
-    Message.create(req.query,(err)=>{
-        res.status(err ? 400 : 200).send(err || `successfully added:${req.query}`);
+    Message.create(req.body,(err, message)=>{
+        res.status(err ? 400 : 200).send(err || req.body);
     });
 
 });

@@ -101,6 +101,9 @@ form.messageDiv.messageInputForm button{
     margin: 0px;
     text-align: right;
 }
+.template{
+    display: none;
+}
 
 @media (min-width: 768px) {
 

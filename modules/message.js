@@ -35,7 +35,8 @@ exports.create = function(message, cb) {
         }
         messages.unshift(newMessage);
         fs.writeFile(dataFile, JSON.stringify(messages), err => {
-            cb(err)
+            if(err) return cb(err);
+            cb(null, newMessage);
         });
     });
 };

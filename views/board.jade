@@ -16,28 +16,42 @@ block content
 							textarea(class="body" rows="2" placeholder="write your secret here" name="body" required)
 							//- a(href="/board")
 							button(type='submit' class="btn btn-primary btn-xs") post
-		each message in messages
-			.row
+		.messageContainer
+			.row.template.newMessage
 				.col-xs-12.col-sm-2
 				.col-xs-12.col-sm-10
 					.messageDiv
 						.imgDiv
-							if(imageUrl)
-								img(src='#{message.image}')
-							else
 								i.glyphicon.glyphicon-user
 						.panel.panel-default
 							.panel-body
-								span= message.body
+								span.body
 							.panel-footer 
-								if(message.name)
-									span= message.name
-								else
-									span Anonymous
+								span.name
 								span @
-								if(message.time)
-									span.timeStamp= message.time
-
+								span.timeStamp
+			each message in messages
+				.row
+					.col-xs-12.col-sm-2
+					.col-xs-12.col-sm-10
+						.messageDiv
+							.imgDiv
+								if(imageUrl)
+									img(src='#{message.image}')
+								else
+									i.glyphicon.glyphicon-user
+							.panel.panel-default
+								.panel-body
+									span= message.body
+								.panel-footer 
+									if(message.name)
+										span= message.name
+									else
+										span Anonymous
+									span @
+									if(message.time)
+										span.timeStamp= message.time
+				
 	//- .chatBox
 	//-   .container
 	//-     form.messageInput

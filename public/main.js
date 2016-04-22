@@ -2,6 +2,7 @@
 
 $(document).ready(init);
 
+var moment = require('moment');
 
 function init(){
     startingAnimation();
@@ -14,9 +15,21 @@ function messageDivSubmitted(e){
     var name = $('.name').val();
     var body = $('.body').val();
 
-    $.post(`pp?name=${name}&body=${body}`)
+    $.post(`/post`, {name: name, body: body})
         .done(function(data) {
-            console.log('dataaaa: ', data);
+            console.log(data);
+            var name = data.name;
+            var body = data.body;
+            var time = moment().format('LLL');
+            var newMessage = $('.row.template.newMessage').clone();
+            newMessage.removeClass('template');
+            newMessage.find('.name').text(name);
+            newMessage.find('.body').text(body);
+            newMessage.find('.timeStamp').text(time);
+
+            $('.messageContainer').prepend(newMessage);
+            $('form.messageInputForm textarea').val('');
+
         })
         .fail(function(err) {
             console.log('err: ', err);

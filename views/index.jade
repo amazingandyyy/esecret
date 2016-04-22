@@ -1,0 +1,30 @@
+extends ./layout.jade
+
+block content
+  .container
+      .jumbotron
+        h1 eSecret!
+        p 
+         | Welcome to eSecret, a secret billboard built with 
+         a(href='http://expressjs.com/' target='_blank') Epress
+         |  & Jade.
+
+        p
+          a.btn.btn-primary.btn-lg(href='/board', role='button') Post Secret
+      .row
+        .col-xs-12.col-sm-3.col-lg-3
+          .intro
+            i.fa.fa-commenting-o
+            h3 simple
+        .col-xs-12.col-sm-3.col-lg-3
+          .intro
+            i.fa.fa-coffee
+            h3 free
+        .col-xs-12.col-sm-3.col-lg-3
+          .intro
+            i.fa.fa-lock
+            h3 safe
+        .col-xs-12.col-sm-3.col-lg-3
+          .intro
+            i.fa.fa-thumbs-o-up
+            h3 open source

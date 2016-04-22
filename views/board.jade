@@ -1,0 +1,53 @@
+extends ./layout.jade
+
+block content
+	.container
+		.row
+			.col-xs-12.col-sm-2
+			.col-xs-12.col-sm-10
+				//- form(method="POST", action"/add").messageDiv
+				form(method="POST", action"?").messageDiv.messageInputForm
+					.imgDiv
+							i.glyphicon.glyphicon-user
+					.panel.panel-default
+						.panel-heading
+							input(class="name" name="name" placeholder="your name")
+						.panel-body
+							textarea(class="body" rows="2" placeholder="write your secret here" name="body" required)
+							//- a(href="/board")
+							button(type='submit' class="btn btn-primary btn-xs") post
+		each message in messages
+			.row
+				.col-xs-12.col-sm-2
+				.col-xs-12.col-sm-10
+					.messageDiv
+						.imgDiv
+							if(imageUrl)
+								img(src='#{message.image}')
+							else
+								i.glyphicon.glyphicon-user
+						.panel.panel-default
+							.panel-body
+								span= message.body
+							.panel-footer 
+								if(message.name)
+									span= message.name
+								else
+									span Anonymous
+								span @
+								if(message.time)
+									span.timeStamp= message.time
+
+	//- .chatBox
+	//-   .container
+	//-     form.messageInput
+	//-       .row
+	//-         .col-xs-6
+	//-           input.form-control(class="name" type='text', placeholder='Your name')
+	//-         .col-xs-6
+	//-           input.form-control(class="image" type='text', placeholder='Your image URL')
+	//-         .col-xs-12
+	//-           .input-group
+	//-             input.form-control(class="message" type='text', placeholder='Your message')
+	//-             span.input-group-btn
+	//-               button.btn.btn-default(type='submit') send

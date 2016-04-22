@@ -1,0 +1,107 @@
+body {
+    font-family: sans-serif;
+    height: 100%;
+    padding-bottom: 40px;
+}
+.center{
+    text-align: center;
+}
+.navbar {
+    border-radius: 0px;
+}
+.intro {
+    padding: 40px 10px;
+    font-size: 3.5em;
+    text-align: center;
+}
+.fa {
+    color: #4582EB;
+}
+.intro h3 {
+    font-size: 0.4em;
+    font-weight: 100;
+    text-align: center;
+}
+.container .jumbotron, .container-fluid .jumbotron {
+    margin-top: 7%;
+    padding: 30px 50px;
+}
+.container {
+    position: relative;
+}
+.messageDiv {
+    /*border: 1px solid black;*/
+}
+
+.messageDiv .imgDiv {
+    border: 1px solid #eee;
+    overflow: hidden;
+    display: inline-block;
+    float: left;
+    height: 40px;
+    width: 40px;
+    border-radius: 6%;
+    font-size: 1.3em;
+    text-align: center;
+    line-height: 40px;
+}
+.row{
+    padding-right: 10px;
+}
+.panel {
+    font-size: 1em;
+    position: relative;
+    left: 40px;
+    max-width: 500px;
+    border-radius: 4px;
+    margin: 3px 30px 10px 12px;
+}
+.panel-body {
+    padding: 7px 13px;
+}
+.panel-body span{
+    margin-left: -15px;
+    font-size: 1.05em;
+
+}
+.panel-heading input {
+    border: none;
+    outline: none;
+    padding-left: 4px;
+    background: none;
+    /*border: 1px solid black;*/
+    width: 40%;
+}
+.panel-default>.panel-heading, .panel-footer{
+    background: none;
+    font-size: 0.8em;
+    opacity: 0.7;
+    padding: 3px 12px;
+    text-align: right;
+}
+form.messageDiv.messageInputForm{
+    position: relative;
+}
+form.messageDiv.messageInputForm button{
+    float: right;
+}
+.panel-body input, .panel-body textarea {
+    border: none;
+    outline: none;
+    background: none;
+    /*border: 1px solid black;*/
+    width: 100%;
+    margin: 0px;
+    padding-left: 5px;
+    position: relative;
+}
+
+.panel-heading span:first-child,.panel-footer span:first-child {
+    font-weight: 600;
+    margin: 0px;
+    text-align: right;
+}
+
+@media (min-width: 768px) {
+
+}

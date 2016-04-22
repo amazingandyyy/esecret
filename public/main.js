@@ -4,18 +4,22 @@ $(document).ready(init);
 
 var moment = require('moment');
 
-function init(){
+function init() {
     startingAnimation();
     $('.messageDiv').submit(messageDivSubmitted);
+    $('.delete').on('click', clickToDelete)
 }
 
-function messageDivSubmitted(e){
+function messageDivSubmitted(e) {
     e.preventDefault();
     console.log('submitted');
     var name = $('.name').val();
     var body = $('.body').val();
 
-    $.post(`/post`, {name: name, body: body})
+    $.post(`/baord/post`, {
+            name: name,
+            body: body
+        })
         .done(function(data) {
             console.log(data);
             var name = data.name;
@@ -34,7 +38,22 @@ function messageDivSubmitted(e){
         .fail(function(err) {
             console.log('err: ', err);
         });
+}
 
+function clickToDelete() {
+    var id = $(this).attr('data-id');
+    console.log('delete id: ', id);
+
+    $.ajax({
+            url: `/post/${id}`,
+            method: 'DELETE'
+        })
+        .done(function(data) {
+            console.log(data);
+        })
+        .fail(function(err) {
+            console.log('err: ', err);
+        });
 }
 
 function startingAnimation() {

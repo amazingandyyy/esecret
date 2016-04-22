@@ -10,7 +10,7 @@ var uuid = require('uuid');
 // var jade = require('jade');  we don't need to require jade here
 
 // require my dog modules
-var Message = require('./modules/message');
+var Message = require('./models/message');
 
 // add declaration
 var app = express();
@@ -46,13 +46,20 @@ app.get('/board', (req, res, next) => {
         });
     });
 });
-app.post('/post', (req, res, next) => {
+app.post('/board/post', (req, res, next) => {
     console.log('req.body: ',req.body);
     // console.log('req.query: ',req.query);
     // console.log('req: ',req);
     // console.log('req: ',req);
     Message.create(req.body,(err, message)=>{
         res.status(err ? 400 : 200).send(err || req.body);
+    });
+
+});
+app.delete('/post/:id', (req, res, next) => {
+    console.log('req.params: ',req.params);
+    Message.delete(req.params,(err, message)=>{
+        res.status(err ? 400 : 200).send(err || req.params);
     });
 
 });

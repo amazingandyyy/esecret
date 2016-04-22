@@ -34,7 +34,7 @@ exports.create = function(message, cb) {
             "id": uuid()
         }
         messages.unshift(newMessage);
-        fs.writeFile(dataFile, JSON.stringify(messages), err => {
+        fs.writeFile(dataFile, JSON.stringify(messages, null, 2), err => {
             if(err) return cb(err);
             cb(null, newMessage);
         });

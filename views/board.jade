@@ -26,7 +26,9 @@ block content
 						.panel.panel-default
 							.panel-body
 								span.body
-							.panel-footer 
+							.panel-footer
+								.btn.btn-xs.delete delete
+								.btn.btn-xs.edit edit
 								span.name
 								span @
 								span.timeStamp
@@ -34,7 +36,7 @@ block content
 				.row
 					.col-xs-12.col-sm-2
 					.col-xs-12.col-sm-10
-						.messageDiv
+						.messageDiv(data-id="#{message.id}")
 							.imgDiv
 								if(imageUrl)
 									img(src='#{message.image}')
@@ -44,6 +46,8 @@ block content
 								.panel-body
 									span= message.body
 								.panel-footer 
+									.btn.btn-xs.delete(data-id="#{message.id}") delete
+									.btn.btn-xs.edit edit
 									if(message.name)
 										span= message.name
 									else

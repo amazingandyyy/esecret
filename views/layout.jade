@@ -4,16 +4,16 @@ html(lang="en")
 		title= title
 		meta(name="viewport" content="initial-scale=1")
 
-		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
+		link(rel="stylesheet", href="/bower_components/bootstrap/dist/css/bootstrap.min.css")
 		if theme
 			link(rel="stylesheet", href="https://bootswatch.com/#{theme}/bootstrap.min.css")
-		link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css")
-		link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css")
+		link(rel="stylesheet", href="/bower_components/font-awesome/css/font-awesome.min.css")
+		link(rel="stylesheet", href="/bower_components/animate.css/animate.min.css")
 		link(rel="stylesheet", href="/style.css")
 
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js")
-		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js")
+		script(src="/bower_components/jquery/dist/jquery.min.js")
+		script(src="/bower_components/moment/moment.js")
+		script(src="/bower_components/bootstrap/dist/js/bootstrap.min.js")
 		script(src="/main.js")
 
 	body
@@ -31,7 +31,7 @@ html(lang="en")
 						li(class= '#{active}')
 							a(href='/board') Board
 						li
-							a(href='https://github.com/amazingandyyy/codinghouse/tree/gh-pages/project/jade-message' target='_blank') Resource
+							a(href='https://github.com/amazingandyyy/essecret' target='_blank') Resource
 						//- li.dropdown
 						//- 	a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
 						//- 		| Themes 

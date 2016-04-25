@@ -5,8 +5,7 @@ block content
 		.row
 			.col-xs-12.col-sm-2
 			.col-xs-12.col-sm-10
-				//- form(method="POST", action"/add").messageDiv
-				form(method="POST", action"?").messageDiv.messageInputForm
+				form.messageDiv.messageInputForm
 					.imgDiv
 							i.glyphicon.glyphicon-user
 					.panel.panel-default
@@ -31,9 +30,9 @@ block content
 								.btn.btn-xs.edit edit
 								span.name
 								span @
-								span.timeStamp
+								span.time
 			each message in messages
-				.row
+				.row(data-id="#{message.id}")
 					.col-xs-12.col-sm-2
 					.col-xs-12.col-sm-10
 						.messageDiv(data-id="#{message.id}")
@@ -47,7 +46,7 @@ block content
 									span= message.body
 								.panel-footer 
 									.btn.btn-xs.delete(data-id="#{message.id}") delete
-									.btn.btn-xs.edit edit
+									.btn.btn-xs.edit(data-id="#{message.id}") edit
 									if(message.name)
 										span= message.name
 									else
@@ -55,7 +54,19 @@ block content
 									span @
 									if(message.time)
 										span.timeStamp= message.time
-				
+	.editterDiv
+		.container
+			.row
+				.col-xs-12.col-sm-2
+				.col-xs-12.col-sm-10
+					form.messageDiv.editterForm
+						.panel.panel-default
+							.panel-heading
+								input(class="name" name="name" placeholder="your name")
+							.panel-body
+								textarea(class="body" rows="3" placeholder="write your secret here" name="body" required)
+								//- a(href="/board")
+								button(type='submit' class="btn btn-primary btn-xs") update
 	//- .chatBox
 	//-   .container
 	//-     form.messageInput

@@ -1,0 +1,25 @@
+{
+  "name": "express-routing",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "amazingandyyy <amazingandyyy@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/amazingandyyy/essecret",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "bootstrap": "^3.3.6",
+    "animate.css": "^3.5.1",
+    "font-awesome": "fontawesome#^4.6.1",
+    "moment": "^2.13.0",
+    "uuid": "^2.0.2"
+  }
+}
